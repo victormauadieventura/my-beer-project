@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div *ngFor="let brewerie of breweries">
+  <p>{{ brewerie.id }}</p>
+  <p>{{ brewerie.name }}</p>
+  <p>{{ brewerie.brewery_type }}</p>
+  <p>{{ brewerie.street }}</p>
+  <p>{{ brewerie.city }}</p>
+  <p>{{ brewerie.state }}</p>
+  <p>{{ brewerie.postal_code }}</p>
+  <p>{{ brewerie.country }}</p>
+  <p>{{ brewerie.longitude }}</p>
+  <p>{{ brewerie.latitude }}</p>
+  <p>{{ brewerie.phone }}</p>
+  <p>{{ brewerie.updated_at }}</p>
+  <p>{{ brewerie.website_url }}</p>
+  <a [href]="brewerie.website_url" target="_blank">{{ brewerie.website_url }}</a>
+  <hr>
+</div>

@@ -1,16 +1,16 @@
 export class Brewerie {
   id: number;
   name: string;
-  breweryType: string;
+  brewery_type: string;
   street: string;
   city: string;
   state: string;
-  postalCode: string;
+  postal_code: string;
   country: string;
   longitude: string;
   latitude: string;
   phone: string;
-  websiteUrl: string;
-  updatedAt: string;
-  tagList: any;
+  website_url: string;
+  updated_at: string;
+  tag_list: any;
 }

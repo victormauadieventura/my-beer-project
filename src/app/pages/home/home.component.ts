@@ -1,4 +1,11 @@
+// Angular Imports
 import { Component, OnInit } from '@angular/core';
+
+// Models Imports
+import { Brewerie } from 'src/app/models/brewerie';
+
+// Services Imports
+import { BeerService } from '../services';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +14,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  breweries: Brewerie[] = [];
+
+  constructor(
+    private beerService: BeerService,
+  ) { }
 
   ngOnInit(): void {
+    this.getBreweries();
   }
 
+  getBreweries(): void {
+    this.beerService
+      .getBreweries()
+      .subscribe((response: any) => {
+        this.breweries = [ ... response ];
+      });
+  }
 }

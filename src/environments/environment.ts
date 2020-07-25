@@ -4,5 +4,5 @@ export const environment = {
     title: 'Breweries',
     version: '0.0.0',
   },
-  api_url: 'https://api.openbrewerydb.org/breweries'
+  api_url: 'https://api.openbrewerydb.org'
 };
