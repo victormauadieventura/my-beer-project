@@ -6,6 +6,7 @@ import { Brewerie } from 'src/app/models/brewerie';
 
 // Services Imports
 import { BeerService } from '../services';
+import { Beer } from 'src/app/models/beer';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { BeerService } from '../services';
 export class HomeComponent implements OnInit {
 
   breweries: Brewerie[] = [];
+  beers: Beer[] = [];
 
   constructor(
     private beerService: BeerService,
@@ -22,6 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBreweries();
+    this.getBeers();
   }
 
   getBreweries(): void {
@@ -29,6 +32,14 @@ export class HomeComponent implements OnInit {
       .getBreweries()
       .subscribe((response: any) => {
         this.breweries = [ ... response ];
+      });
+  }
+
+  getBeers(): void {
+    this.beerService
+      .getBeers()
+      .subscribe((response: any) => {
+        this.beers = [ ... response ];
       });
   }
 }

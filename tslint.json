@@ -6,6 +6,10 @@
     "deprecation": {
       "severity": "warning"
     },
+    "variable-name": [
+      true,
+      "allow-snake-case"
+    ],
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
